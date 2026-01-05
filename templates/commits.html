@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Analyse des commits</title>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script>
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      fetch("/commits-data/")
+        .then(response => response.json())
+        .then(data => {
+
+          var dataTable = new google.visualization.DataTable();
+          dataTable.addColumn('number', 'Minute');
+
+          data.results.forEach(min => {
+            dataTable.addRow([min]);
+          });
+
+          var options = {
+            title: "Répartition des commits par minute",
+            legend: { position: "none" },
+            histogram: { bucketSize: 5 },
+            colors: ['#34A853']
+          };
+
+          var chart = new google.visualization.Histogram(
+            document.getElementById("chart_div")
+          );
+          chart.draw(dataTable, options);
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Activité GitHub – Commits par minute</h2>
+  <div id="chart_div" style="width:900px; height:500px;"></div>
+</body>
+</html>
