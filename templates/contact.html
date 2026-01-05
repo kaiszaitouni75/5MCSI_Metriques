@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00c6fb;
+        }
+
+        .info {
+            text-align: center;
+            font-size: 12px;
+            color: gray;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-box">
+        <h2>📩 Contactez-moi</h2>
+
+        <form>
+            <label>Prénom</label>
+            <input type="text" placeholder="Votre prénom">
+
+            <label>Nom</label>
+            <input type="text" placeholder="Votre nom">
+
+            <label>Message</label>
+            <textarea rows="5" placeholder="Votre message..."></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <div class="info">
+            * Les données ne sont pas enregistrées
+        </div>
+    </div>
+
+</body>
+</html>
