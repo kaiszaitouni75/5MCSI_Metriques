@@ -13,9 +13,10 @@ def hello_world():
   
 if __name__ == "__main__":
   app.run(debug=True)
+  
 @app.route("/contact/")
-def MaPremiereAPI():
-    return "<h2>Ma page de contact</h2>"
+def moncontact():
+    return render_template("contact.html")
 
 @app.route('/tawarano/')
 def meteo():
